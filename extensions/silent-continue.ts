@@ -6,7 +6,7 @@
  * model to resume from the existing transcript, not a new user message.
  *
  * Usage:
- *   Ctrl+Shift+Enter  - resume without adding user text
+ *   Ctrl+K            - resume without adding user text
  *   /silent-continue  - same as the shortcut
  */
 
@@ -47,7 +47,7 @@ export default function (pi: ExtensionAPI) {
 		return { messages };
 	});
 
-	pi.registerShortcut(Key.ctrlShift("enter"), {
+	pi.registerShortcut(Key.ctrl("k"), {
 		description: "Continue the LLM turn without adding a user message",
 		handler: (ctx) => {
 			resumeTurn(pi, ctx);
